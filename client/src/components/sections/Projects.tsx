@@ -21,7 +21,14 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
       <div className="group relative block rounded-3xl overflow-hidden border border-border/60 bg-card/60 backdrop-blur-sm hover-lift hover:border-primary/50 h-full flex flex-col">
         {/* Project Image Header */}
         <div className={`relative aspect-[16/10] bg-gradient-to-br ${project.gradient} overflow-hidden shrink-0`}>
-          <img src={project.image} alt={project.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+          <img 
+            src={project.image} 
+            alt={`Screenshot of ${project.title}`}
+            width={600}
+            height={375}
+            loading="lazy"
+            className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+          />
           <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500" />
 
           {/* Year Badge */}
@@ -37,6 +44,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={`View ${project.title} source code on GitHub`}
                 title="Source Code"
                 className="flex h-11 w-11 items-center justify-center rounded-full bg-background/40 backdrop-blur-md border border-white/20 hover:bg-background transition-all duration-500">
                 <Github className="h-5 w-5 text-white group-hover:text-primary" />
@@ -47,6 +55,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
                 href={project.href}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={`Visit ${project.title} live demo`}
                 title="Live Demo"
                 className="flex h-11 w-11 items-center justify-center rounded-full bg-background/40 backdrop-blur-md border border-white/20 hover:bg-background hover:rotate-45 transition-all duration-500">
                 <ArrowUpRight className="h-5 w-5 text-white group-hover:text-primary" />
@@ -63,7 +72,11 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
           {/* Description with Expandable functionality */}
           <div className="mt-3 relative">
             <p className={`text-muted-foreground leading-relaxed transition-all duration-300 ${isExpanded ? "" : "line-clamp-2"}`}>{project.description}</p>
-            <button onClick={() => setIsExpanded(!isExpanded)} className="mt-2 text-xs font-mono text-primary flex items-center gap-1 hover:underline focus:outline-none">
+            <button 
+              onClick={() => setIsExpanded(!isExpanded)} 
+              aria-expanded={isExpanded}
+              aria-label={isExpanded ? `Show less about project ${project.title}` : `Read more about project ${project.title}`}
+              className="mt-2 text-xs font-mono text-primary flex items-center gap-1 hover:underline focus:outline-none">
               {isExpanded ? (
                 <>
                   Show less <ChevronUp className="h-3 w-3" />

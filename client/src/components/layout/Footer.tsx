@@ -54,7 +54,13 @@ export const Footer = () => {
 
           <div className="flex items-center gap-4">
             {footerSocials.map((social) => (
-              <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+              <a 
+                key={social.label} 
+                href={social.href} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                aria-label={`Follow me on ${social.label}`}
+                className="text-muted-foreground hover:text-primary transition-colors">
                 {social.label === "GitHub" && <Github className="h-4 w-4" />}
                 {social.label === "LinkedIn" && <Linkedin className="h-4 w-4" />}
               </a>

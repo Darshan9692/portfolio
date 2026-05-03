@@ -36,16 +36,24 @@ export const Achievements = () => (
                       <Button
                         variant="ghost"
                         size="icon"
+                        aria-label={`View ${achievement.title} certificate`}
                         className="rounded-full h-10 w-10 border border-border/40 hover:bg-primary hover:text-primary-foreground transition-all duration-300">
                         <Eye className="h-4 w-4" />
                       </Button>
                     </DialogTrigger>
-                    <DialogContent className="max-w-4xl p-0 overflow-hidden border-none bg-transparent">
-                      <DialogHeader className="sr-only">
+                    <DialogContent className="max-w-4xl">
+                      <DialogHeader>
                         <DialogTitle>{achievement.title}</DialogTitle>
                       </DialogHeader>
                       <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-secondary">
-                        <img src={achievement.image} alt={achievement.title} className="h-full w-full object-contain" />
+                        <img 
+                          src={achievement.image} 
+                          alt={`Certificate for ${achievement.title}`} 
+                          width={800}
+                          height={450}
+                          loading="lazy"
+                          className="h-full w-full object-contain" 
+                        />
                       </div>
                     </DialogContent>
                   </Dialog>
