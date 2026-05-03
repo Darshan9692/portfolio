@@ -3,6 +3,7 @@ import { ThemeToggle } from "@/components/shared/ThemeToggle";
 import { Button } from "@/components/ui/button";
 import { navLinks } from "@/constants/portfolio-data";
 import { motion, AnimatePresence } from "framer-motion";
+import { cn } from "@/lib/utils";
 import { Menu, X, Zap, type LucideIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -21,30 +22,24 @@ const NavItem = ({ link }: { link: NavLink }) => {
       href={link.href}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="relative flex items-center h-10 px-3 rounded-full hover:bg-secondary/80 transition-colors group"
-      initial={false}
-      animate={{
-        width: isHovered ? "auto" : "40px",
-      }}
+      className="relative flex items-center h-10 px-3 rounded-full hover:bg-secondary/80 transition-colors group overflow-hidden"
       layout
       transition={{
         type: "spring",
-        stiffness: 200,
-        damping: 25,
-        mass: 0.8,
+        stiffness: 300,
+        damping: 30,
       }}>
-      <motion.div layout className="flex items-center justify-center shrink-0" animate={{ scale: isHovered ? 1.1 : 1 }}>
-        <Icon className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
+      <motion.div layout className="flex items-center justify-center shrink-0">
+        <Icon className={cn("h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors", isHovered && "scale-110")} />
       </motion.div>
-      <AnimatePresence>
+      <AnimatePresence mode="popLayout">
         {isHovered && (
           <motion.span
             layout
-            initial={{ opacity: 0, x: -5, filter: "blur(4px)" }}
-            animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-            exit={{ opacity: 0, x: -5, filter: "blur(4px)" }}
-            transition={{ duration: 0.2 }}
-            className="ml-2 text-[10px] font-mono uppercase tracking-[0.2em] text-primary whitespace-nowrap overflow-hidden">
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -10 }}
+            className="ml-2 text-[10px] font-mono uppercase tracking-[0.2em] text-primary whitespace-nowrap">
             {link.label}
           </motion.span>
         )}
