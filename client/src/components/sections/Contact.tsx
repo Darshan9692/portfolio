@@ -1,14 +1,14 @@
-import { motion } from "framer-motion";
-import { useState } from "react";
-import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
+import { SectionHeader } from "@/components/shared/SectionHeader";
+import { SectionWrapper } from "@/components/shared/SectionWrapper";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { toast } from "@/hooks/use-toast";
-import { SectionHeader } from "@/components/shared/SectionHeader";
-import { SectionWrapper } from "@/components/shared/SectionWrapper";
 import { API_CONFIG } from "@/config/api";
+import { toast } from "@/hooks/use-toast";
 import apiClient from "@/lib/axios";
+import { motion } from "framer-motion";
+import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
+import { useState } from "react";
 
 export const Contact = () => {
   const [loading, setLoading] = useState(false);
@@ -48,7 +48,7 @@ export const Contact = () => {
   return (
     <SectionWrapper id="contact">
       <div className="absolute inset-0 bg-gradient-radial opacity-50" />
-      <SectionHeader eyebrow="05 — Contact" />
+      <SectionHeader eyebrow="06 — Contact" />
       <div className="grid lg:grid-cols-5 gap-8">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
@@ -84,7 +84,7 @@ export const Contact = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="lg:col-span-3 p-8 md:p-10 rounded-3xl border border-border/60 bg-card/80 backdrop-blur-md space-y-5">
+          className="lg:col-span-3 p-6 md:p-10 rounded-3xl border border-border/60 bg-card/80 backdrop-blur-md space-y-5">
           <div className="grid md:grid-cols-2 gap-5">
             <div>
               <label className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Name</label>

@@ -1,4 +1,4 @@
-import { LucideIcon, Code2, Cpu, Globe, Terminal, Box, Rocket, Braces } from "lucide-react";
+import { Box, Braces, Code2, Cpu, Globe, LucideIcon, Rocket, Terminal } from "lucide-react";
 
 export const genericIcons: Record<string, LucideIcon> = {
   "Object Oriented Programming": Code2,

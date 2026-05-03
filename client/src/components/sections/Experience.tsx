@@ -1,12 +1,12 @@
-import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
 import { SectionHeader } from "@/components/shared/SectionHeader";
 import { SectionWrapper } from "@/components/shared/SectionWrapper";
 import { experiences } from "@/constants/portfolio-data";
+import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 
 export const Experience = () => (
   <SectionWrapper id="experience" className="bg-secondary/30 border-y border-border/60">
-    <SectionHeader eyebrow="02 — Experience" />
+    <SectionHeader eyebrow="03 — Experience" />
     <div className="space-y-4">
       {experiences.map((exp, i) => (
         <motion.div

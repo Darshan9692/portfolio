@@ -39,3 +39,10 @@ export interface Project {
   year: string;
   category: string;
 }
+export interface Achievement {
+  title: string;
+  description: string;
+  date: string;
+  icon?: LucideIcon;
+  image?: string;
+}

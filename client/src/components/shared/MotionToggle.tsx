@@ -1,6 +1,6 @@
-import { Accessibility } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useMotionPreference } from "@/hooks/use-motion-preference";
+import { Accessibility } from "lucide-react";
 
 export const MotionToggle = () => {
   const { reduced, toggle } = useMotionPreference();

@@ -1,6 +1,6 @@
-import { useEffect, useState, ReactNode } from "react";
-import { MotionConfig, useReducedMotion } from "framer-motion";
 import { MotionPrefContext } from "@/hooks/use-motion-preference";
+import { MotionConfig, useReducedMotion } from "framer-motion";
+import { ReactNode, useEffect, useState } from "react";
 
 export const MotionPreferenceProvider = ({ children }: { children: ReactNode }) => {
   const systemReduced = useReducedMotion();
