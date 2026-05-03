@@ -61,8 +61,7 @@ export const Hero = () => {
           </h2>
         </div>
 
-        <h1
-          className="w-full mb-6 font-display text-[clamp(2.5rem,10vw,8rem)] font-bold tracking-tight text-foreground flex flex-wrap justify-center items-center gap-x-[0.1em] gap-y-2 leading-[1.1]">
+        <h1 className="w-full mb-6 font-display text-[clamp(2.5rem,10vw,8rem)] font-bold tracking-tight text-foreground flex flex-wrap justify-center items-center gap-x-[0.1em] gap-y-2 leading-[1.1]">
           <span>Software</span>
           <span className="text-gradient italic font-light relative">Engineer.</span>
         </h1>
