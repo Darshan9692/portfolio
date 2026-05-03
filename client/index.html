@@ -17,18 +17,14 @@
     <link rel="canonical" href="https://darshan-panchal.vercel.app/" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
+    <!-- Optimized Google Fonts Loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <!-- Preload fonts for performance -->
     <link
-      rel="preload"
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@400;500&display=swap"
-      as="style"
-      onload="
-        this.onload = null;
-        this.rel = 'stylesheet';
-      " />
+      rel="stylesheet"
+      media="print"
+      onload="this.media = 'all'" />
     <noscript>
       <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
     </noscript>
@@ -77,6 +73,21 @@
         ]
       }
     </script>
+    <style>
+      :root {
+        --background: 210 40% 98%;
+        --foreground: 222 47% 8%;
+      }
+      .dark {
+        --background: 222 47% 5%;
+        --foreground: 210 40% 98%;
+      }
+      body {
+        background-color: hsl(var(--background));
+        color: hsl(var(--foreground));
+        font-family: "Inter", system-ui, sans-serif;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
