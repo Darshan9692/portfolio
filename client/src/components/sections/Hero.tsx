@@ -66,7 +66,7 @@ export const Hero = () => {
           <span className="text-gradient italic font-light relative">Engineer.</span>
         </h1>
 
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.15 }} className="flex flex-col items-center gap-6">
+        <div className="flex flex-col items-center gap-6">
           <p className="max-w-xl text-base md:text-lg text-muted-foreground leading-relaxed mx-auto">
             Full Stack Developer specializing in scalable backend systems and high-performance applications, delivering end-to-end solutions with a focus on clean architecture and
             efficiency.
@@ -94,7 +94,7 @@ export const Hero = () => {
               </a>
             </div>
           </div>
-        </motion.div>
+        </div>
 
         <motion.a
           href="#education"

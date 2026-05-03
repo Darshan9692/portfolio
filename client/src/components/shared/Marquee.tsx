@@ -7,8 +7,8 @@ export const Marquee = () => {
       <div className="flex marquee whitespace-nowrap">
         {row.map((item, i) => (
           <div key={i} className="flex items-center gap-6 md:gap-10 px-4 md:px-6">
-            <span className="font-display text-lg md:text-2xl font-bold tracking-tight text-foreground/80">{item}</span>
-            <span className="text-primary text-base md:text-lg">✦</span>
+            <span className="font-display text-sm md:text-lg font-bold tracking-tight text-foreground/80">{item}</span>
+            <span className="text-primary text-xs md:text-sm">✦</span>
           </div>
         ))}
       </div>
