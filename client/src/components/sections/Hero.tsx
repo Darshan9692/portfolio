@@ -20,20 +20,20 @@ export const Hero = () => {
         <div className="absolute inset-0 bg-grid opacity-20 [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" />
 
         {/* Draggable Blobs - Optimized for Mobile */}
-        <motion.div
-          drag
-          dragConstraints={{ left: -200, right: 200, top: -200, bottom: 200 }}
-          dragElastic={0.1}
-          className="absolute top-1/4 left-1/4 h-[200px] w-[200px] md:h-[400px] md:w-[400px] rounded-full bg-primary/20 blur-[60px] md:blur-[100px] cursor-grab active:cursor-grabbing z-10"
-          whileHover={{ scale: 1.1 }}
-        />
-        <motion.div
-          drag
-          dragConstraints={{ left: -200, right: 200, top: -200, bottom: 200 }}
-          dragElastic={0.1}
-          className="absolute bottom-1/4 right-1/4 h-[180px] w-[180px] md:h-[350px] md:w-[350px] rounded-full bg-blue-400/15 blur-[60px] md:blur-[100px] cursor-grab active:cursor-grabbing z-10"
-          whileHover={{ scale: 1.1 }}
-        />
+          <motion.div
+            drag
+            dragConstraints={{ left: -200, right: 200, top: -200, bottom: 200 }}
+            dragElastic={0.1}
+            className="absolute top-1/4 left-1/4 h-[200px] w-[200px] md:h-[300px] md:w-[300px] rounded-full bg-primary/20 blur-[60px] md:blur-[100px] cursor-grab active:cursor-grabbing z-10"
+            whileHover={{ scale: 1.1 }}
+          />
+          <motion.div
+            drag
+            dragConstraints={{ left: -200, right: 200, top: -200, bottom: 200 }}
+            dragElastic={0.1}
+            className="absolute bottom-1/4 right-1/4 h-[180px] w-[180px] md:h-[280px] md:w-[280px] rounded-full bg-blue-400/15 blur-[60px] md:blur-[100px] cursor-grab active:cursor-grabbing z-10"
+            whileHover={{ scale: 1.1 }}
+          />
 
         {/* Mouse Follower Spotlight (Desktop only for performance) */}
         <motion.div
@@ -94,13 +94,13 @@ export const Hero = () => {
             <div className="flex items-center justify-center gap-3">
               <a
                 href="https://github.com/Darshan9692"
-                aria-label="GitHub"
+                aria-label="Visit my GitHub profile"
                 className="p-3 rounded-full border border-border/60 hover:border-primary/60 hover:text-primary transition-all hover:scale-110 active:scale-95">
                 <Github className="h-5 w-5" />
               </a>
               <a
                 href="https://www.linkedin.com/in/darshan-panchal-9735a8251"
-                aria-label="LinkedIn"
+                aria-label="Visit my LinkedIn profile"
                 className="p-3 rounded-full border border-border/60 hover:border-primary/60 hover:text-primary transition-all hover:scale-110 active:scale-95">
                 <Linkedin className="h-5 w-5" />
               </a>

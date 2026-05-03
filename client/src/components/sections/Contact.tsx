@@ -114,21 +114,21 @@ export const Contact = () => {
           className="lg:col-span-3 p-6 md:p-10 rounded-3xl border border-border/60 bg-card/80 backdrop-blur-md space-y-5">
           <div className="grid md:grid-cols-2 gap-5">
             <div>
-              <label className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Name</label>
-              <Input name="name" required placeholder="Darshan Panchal" className="mt-2 h-12 rounded-xl bg-background/60" />
+              <label htmlFor="name" className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Name</label>
+              <Input id="name" name="name" required placeholder="Darshan Panchal" className="mt-2 h-12 rounded-xl bg-background/60" />
             </div>
             <div>
-              <label className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Email</label>
-              <Input name="email" required type="email" placeholder="dpinfo9692@gmail.com" className="mt-2 h-12 rounded-xl bg-background/60" />
+              <label htmlFor="email" className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Email</label>
+              <Input id="email" name="email" required type="email" placeholder="dpinfo9692@gmail.com" className="mt-2 h-12 rounded-xl bg-background/60" />
             </div>
           </div>
           <div>
-            <label className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Subject</label>
-            <Input name="subject" required placeholder="Topic..." className="mt-2 h-12 rounded-xl bg-background/60" />
+            <label htmlFor="subject" className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Subject</label>
+            <Input id="subject" name="subject" required placeholder="Topic..." className="mt-2 h-12 rounded-xl bg-background/60" />
           </div>
           <div>
-            <label className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Message</label>
-            <Textarea name="message" required rows={6} placeholder="Hello..." className="mt-2 rounded-xl bg-background/60 resize-none" />
+            <label htmlFor="message" className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Message</label>
+            <Textarea id="message" name="message" required rows={6} placeholder="Hello..." className="mt-2 rounded-xl bg-background/60 resize-none" />
           </div>
           <Button type="submit" variant="electric" size="lg" disabled={loading} className="w-full md:w-auto">
             {loading ? "Sending…" : "Send message"} <ArrowRight className="h-4 w-4" />
