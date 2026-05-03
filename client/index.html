@@ -14,23 +14,32 @@
       name="keywords"
       content="Darshan Panchal, Software Engineer Ahmedabad, Full Stack Developer, Backend Engineer, Node.js Expert, Nest.js Developer, Java Spring Boot, React TypeScript Portfolio, Scalable Systems Architecture, RESTful API Design, PostgreSQL, Docker, Agentic AI, eSparkBiz" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
-    <link rel="canonical" href="https://darshanpanchal.com/" />
+    <link rel="canonical" href="https://darshan-panchal.vercel.app/" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://cdn.simpleicons.org" />
+
+    <!-- Preload fonts for performance -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
-      rel="stylesheet" />
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@400;500&display=swap"
+      as="style"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      " />
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+    </noscript>
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Darshan Panchal" />
-    <meta property="og:url" content="https://darshanpanchal.com/" />
+    <meta property="og:url" content="https://darshan-panchal.vercel.app/" />
     <meta property="og:title" content="Darshan Panchal — Software Engineer Portfolio" />
     <meta property="og:description" content="Software engineering portfolio of Darshan Panchal. High-performance web applications built with React, TypeScript, and Node.js." />
-    <meta property="og:image" content="https://darshanpanchal.com/og-image.jpg" />
+    <meta property="og:image" content="https://darshan-panchal.vercel.app/og-image.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:locale" content="en_US" />
@@ -39,7 +48,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Darshan Panchal — Software Engineer Portfolio" />
     <meta name="twitter:description" content="Software engineering portfolio of Darshan Panchal. High-performance web applications built with React, TypeScript, and Node.js." />
-    <meta name="twitter:image" content="https://darshanpanchal.com/og-image.jpg" />
+    <meta name="twitter:image" content="https://darshan-panchal.vercel.app/og-image.jpg" />
 
     <!-- JSON-LD: Person + WebSite + ProfessionalService -->
     <script type="application/ld+json">
@@ -48,36 +57,21 @@
         "@graph": [
           {
             "@type": "Person",
-            "@id": "https://darshanpanchal.com/#person",
+            "@id": "https://darshan-panchal.vercel.app/#person",
             "name": "Darshan Panchal",
-            "url": "https://darshanpanchal.com/",
+            "url": "https://darshan-panchal.vercel.app/",
             "jobTitle": "Software Engineer",
             "description": "Full-stack developer specializing in building scalable backend systems and high-performance React applications.",
-            "knowsAbout": [
-              "Software Architecture",
-              "Node.js",
-              "Nest.js",
-              "TypeScript",
-              "React",
-              "PostgreSQL",
-              "System Design",
-              "Backend Engineering"
-            ],
-            "award": [
-              "Digital Ideathon Winner (3rd Rank)",
-              "Smart India Hackathon Recognition"
-            ],
-            "sameAs": [
-              "https://github.com/Darshan9692",
-              "https://www.linkedin.com/in/darshan-panchal-9735a8251"
-            ]
+            "knowsAbout": ["Software Architecture", "Node.js", "Nest.js", "TypeScript", "React", "PostgreSQL", "System Design", "Backend Engineering"],
+            "award": ["Digital Ideathon Winner (3rd Rank)", "Smart India Hackathon Recognition"],
+            "sameAs": ["https://github.com/Darshan9692", "https://www.linkedin.com/in/darshan-panchal-9735a8251"]
           },
           {
             "@type": "WebSite",
-            "@id": "https://darshanpanchal.com/#website",
-            "url": "https://darshanpanchal.com/",
+            "@id": "https://darshan-panchal.vercel.app/#website",
+            "url": "https://darshan-panchal.vercel.app/",
             "name": "Darshan Panchal Portfolio",
-            "publisher": { "@id": "https://darshanpanchal.com/#person" },
+            "publisher": { "@id": "https://darshan-panchal.vercel.app/#person" },
             "inLanguage": "en-US"
           }
         ]

@@ -30,8 +30,8 @@ const ExperienceCard = ({ exp, index }: { exp: ExperienceType; index: number }) 
         {/* Expandable Summary */}
         <div className="mt-4 relative">
           <p className={`text-muted-foreground leading-relaxed transition-all duration-300 ${isExpanded ? "" : "line-clamp-3"}`}>{exp.summary}</p>
-          <button 
-            onClick={() => setIsExpanded(!isExpanded)} 
+          <button
+            onClick={() => setIsExpanded(!isExpanded)}
             aria-expanded={isExpanded}
             aria-label={isExpanded ? `Show less about my experience at ${exp.company}` : `Read more about my experience at ${exp.company}`}
             className="mt-2 text-xs font-mono text-primary flex items-center gap-1 hover:underline focus:outline-none">
@@ -72,8 +72,8 @@ const ExperienceCard = ({ exp, index }: { exp: ExperienceType; index: number }) 
 };
 
 export const Experience = () => (
-  <SectionWrapper id="experience" className="bg-secondary/30 border-y border-border/60">
-    <SectionHeader eyebrow="03 — Experience" />
+  <SectionWrapper id="experience" className="bg-secondary/30 border-y border-border/60" aria-labelledby="experience-title">
+    <SectionHeader id="experience-title" eyebrow="03 — Experience" />
     <div className="space-y-4">
       {experiences.map((exp, i) => (
         <ExperienceCard key={exp.company} exp={exp} index={i} />

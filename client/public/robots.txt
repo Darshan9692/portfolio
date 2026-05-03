@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://darshanpanchal.com/sitemap.xml
+Sitemap: https://darshan-panchal.vercel.app/sitemap.xml

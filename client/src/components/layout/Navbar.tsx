@@ -100,7 +100,11 @@ export const Navbar = () => {
             <a href="#contact">Let's talk</a>
           </Button>
 
-          <button className="md:hidden rounded-full border border-border/60 p-2 bg-background/40 backdrop-blur-md" onClick={() => setOpen(!open)}>
+          <button
+            className="md:hidden rounded-full border border-border/60 p-2 bg-background/40 backdrop-blur-md"
+            onClick={() => setOpen(!open)}
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}>
             {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
           </button>
         </div>

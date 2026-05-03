@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 import { GraduationCap } from "lucide-react";
 
 export const Education = () => (
-  <SectionWrapper id="education">
-    <SectionHeader eyebrow="01 — Education" />
+  <SectionWrapper id="education" aria-labelledby="education-title">
+    <SectionHeader id="education-title" eyebrow="06 — Education" />
     <div className="relative">
       {/* Timeline Line */}
       <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-1/2" />

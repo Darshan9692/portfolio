@@ -54,11 +54,11 @@ export const Footer = () => {
 
           <div className="flex items-center gap-4">
             {footerSocials.map((social) => (
-              <a 
-                key={social.label} 
-                href={social.href} 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label={`Follow me on ${social.label}`}
                 className="text-muted-foreground hover:text-primary transition-colors">
                 {social.label === "GitHub" && <Github className="h-4 w-4" />}
@@ -72,7 +72,7 @@ export const Footer = () => {
         <div className="pt-6 border-t border-border/20 grid grid-cols-1 md:grid-cols-3 items-center gap-6">
           <div className="hidden md:block" /> {/* Left Spacer */}
           <div className="text-center">
-            <p className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground/40 text-center px-4">
+            <p className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground/70 text-center px-4">
               © {new Date().getFullYear()} — Designed & Developed by Darshan Panchal
             </p>
           </div>

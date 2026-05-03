@@ -21,13 +21,13 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
       <div className="group relative block rounded-3xl overflow-hidden border border-border/60 bg-card/60 backdrop-blur-sm hover-lift hover:border-primary/50 h-full flex flex-col">
         {/* Project Image Header */}
         <div className={`relative aspect-[16/10] bg-gradient-to-br ${project.gradient} overflow-hidden shrink-0`}>
-          <img 
-            src={project.image} 
+          <img
+            src={project.image}
             alt={`Screenshot of ${project.title}`}
             width={600}
             height={375}
             loading="lazy"
-            className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+            className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
           />
           <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500" />
 
@@ -72,8 +72,8 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
           {/* Description with Expandable functionality */}
           <div className="mt-3 relative">
             <p className={`text-muted-foreground leading-relaxed transition-all duration-300 ${isExpanded ? "" : "line-clamp-2"}`}>{project.description}</p>
-            <button 
-              onClick={() => setIsExpanded(!isExpanded)} 
+            <button
+              onClick={() => setIsExpanded(!isExpanded)}
               aria-expanded={isExpanded}
               aria-label={isExpanded ? `Show less about project ${project.title}` : `Read more about project ${project.title}`}
               className="mt-2 text-xs font-mono text-primary flex items-center gap-1 hover:underline focus:outline-none">
@@ -130,15 +130,27 @@ export const Projects = () => {
   }, [emblaApi, onSelect]);
 
   return (
-    <SectionWrapper id="projects" className="bg-secondary/30 border-y border-border/60 overflow-hidden" containerClassName="px-0 md:px-8">
+    <SectionWrapper id="projects" className="bg-secondary/30 border-y border-border/60 overflow-hidden" containerClassName="px-0 md:px-8" aria-labelledby="projects-title">
       <div className="container">
         <div className="flex items-end justify-between mb-12">
-          <SectionHeader eyebrow="04 — Projects" />
+          <SectionHeader id="projects-title" eyebrow="04 — Projects" />
           <div className="flex gap-2 mb-8">
-            <Button variant="outline" size="icon" onClick={scrollPrev} disabled={!prevBtnEnabled} className="rounded-full border-border/60 hover:border-primary/50">
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={scrollPrev}
+              disabled={!prevBtnEnabled}
+              className="rounded-full border-border/60 hover:border-primary/50"
+              aria-label="Previous project">
               <ArrowLeft className="h-4 w-4" />
             </Button>
-            <Button variant="outline" size="icon" onClick={scrollNext} disabled={!nextBtnEnabled} className="rounded-full border-border/60 hover:border-primary/50">
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={scrollNext}
+              disabled={!nextBtnEnabled}
+              className="rounded-full border-border/60 hover:border-primary/50"
+              aria-label="Next project">
               <ArrowRight className="h-4 w-4" />
             </Button>
           </div>

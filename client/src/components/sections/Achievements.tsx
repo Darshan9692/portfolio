@@ -7,8 +7,8 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 
 export const Achievements = () => (
-  <SectionWrapper id="achievements">
-    <SectionHeader eyebrow="05 — Achievements" />
+  <SectionWrapper id="achievements" aria-labelledby="achievements-title">
+    <SectionHeader id="achievements-title" eyebrow="05 — Achievements" />
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {achievements.map((achievement, i) => {
         const Icon = achievement.icon || null;
@@ -46,13 +46,13 @@ export const Achievements = () => (
                         <DialogTitle>{achievement.title}</DialogTitle>
                       </DialogHeader>
                       <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-secondary">
-                        <img 
-                          src={achievement.image} 
-                          alt={`Certificate for ${achievement.title}`} 
+                        <img
+                          src={achievement.image}
+                          alt={`Certificate for ${achievement.title}`}
                           width={800}
                           height={450}
                           loading="lazy"
-                          className="h-full w-full object-contain" 
+                          className="h-full w-full object-contain"
                         />
                       </div>
                     </DialogContent>

@@ -50,9 +50,9 @@ export const Contact = () => {
   const qrCodeUrl = QR_CODE_API(MAP_URL);
 
   return (
-    <SectionWrapper id="contact">
+    <SectionWrapper id="contact" aria-labelledby="contact-title">
       <div className="absolute inset-0 bg-gradient-radial opacity-50" />
-      <SectionHeader eyebrow="06 — Contact" />
+      <SectionHeader id="contact-title" eyebrow="07 — Contact" />
       <div className="grid lg:grid-cols-5 gap-8">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
@@ -114,20 +114,28 @@ export const Contact = () => {
           className="lg:col-span-3 p-6 md:p-10 rounded-3xl border border-border/60 bg-card/80 backdrop-blur-md space-y-5">
           <div className="grid md:grid-cols-2 gap-5">
             <div>
-              <label htmlFor="name" className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Name</label>
+              <label htmlFor="name" className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
+                Name
+              </label>
               <Input id="name" name="name" required placeholder="Darshan Panchal" className="mt-2 h-12 rounded-xl bg-background/60" />
             </div>
             <div>
-              <label htmlFor="email" className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Email</label>
+              <label htmlFor="email" className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
+                Email
+              </label>
               <Input id="email" name="email" required type="email" placeholder="dpinfo9692@gmail.com" className="mt-2 h-12 rounded-xl bg-background/60" />
             </div>
           </div>
           <div>
-            <label htmlFor="subject" className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Subject</label>
+            <label htmlFor="subject" className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
+              Subject
+            </label>
             <Input id="subject" name="subject" required placeholder="Topic..." className="mt-2 h-12 rounded-xl bg-background/60" />
           </div>
           <div>
-            <label htmlFor="message" className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Message</label>
+            <label htmlFor="message" className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
+              Message
+            </label>
             <Textarea id="message" name="message" required rows={6} placeholder="Hello..." className="mt-2 rounded-xl bg-background/60 resize-none" />
           </div>
           <Button type="submit" variant="electric" size="lg" disabled={loading} className="w-full md:w-auto">
