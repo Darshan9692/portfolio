@@ -1,0 +1,226 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Electric Blue Portfolio — Design System
+   All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Light mode — paper white with electric blue accents */
+    --background: 210 40% 98%;
+    --foreground: 222 47% 8%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 8%;
+
+    --primary: 217 100% 55%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 210 100% 65%;
+
+    --secondary: 210 40% 94%;
+    --secondary-foreground: 222 47% 8%;
+
+    --muted: 210 30% 92%;
+    --muted-foreground: 215 16% 40%;
+
+    --accent: 217 100% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 215 25% 88%;
+    --input: 215 25% 88%;
+    --ring: 217 100% 55%;
+
+    --radius: 1rem;
+
+    /* Brand tokens */
+    --electric: 217 100% 55%;
+    --electric-glow: 200 100% 60%;
+    --ink: 222 47% 8%;
+    --paper: 210 40% 98%;
+
+    --gradient-electric: linear-gradient(135deg, hsl(217 100% 55%), hsl(200 100% 60%));
+    --gradient-radial: radial-gradient(circle at 50% 0%, hsl(217 100% 55% / 0.25), transparent 60%);
+    --gradient-mesh: radial-gradient(at 20% 20%, hsl(217 100% 55% / 0.15) 0px, transparent 50%), radial-gradient(at 80% 60%, hsl(200 100% 60% / 0.12) 0px, transparent 50%);
+
+    --shadow-electric: 0 20px 60px -20px hsl(217 100% 55% / 0.5);
+    --shadow-glow: 0 0 80px hsl(217 100% 55% / 0.4);
+    --shadow-soft: 0 10px 40px -15px hsl(222 47% 8% / 0.15);
+
+    --transition-smooth: cubic-bezier(0.65, 0, 0.35, 1);
+  }
+
+  .dark {
+    --background: 222 47% 5%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 40% 8%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 40% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 100% 60%;
+    --primary-foreground: 222 47% 5%;
+    --primary-glow: 195 100% 65%;
+
+    --secondary: 222 35% 12%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 222 30% 14%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 210 100% 60%;
+    --accent-foreground: 222 47% 5%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 222 30% 16%;
+    --input: 222 30% 16%;
+    --ring: 210 100% 60%;
+
+    --electric: 210 100% 60%;
+    --electric-glow: 195 100% 65%;
+    --ink: 210 40% 98%;
+    --paper: 222 47% 5%;
+
+    --gradient-electric: linear-gradient(135deg, hsl(210 100% 60%), hsl(195 100% 65%));
+    --gradient-radial: radial-gradient(circle at 50% 0%, hsl(210 100% 60% / 0.3), transparent 60%);
+    --gradient-mesh: radial-gradient(at 20% 20%, hsl(210 100% 60% / 0.2) 0px, transparent 50%), radial-gradient(at 80% 60%, hsl(195 100% 65% / 0.15) 0px, transparent 50%);
+
+    --shadow-electric: 0 20px 60px -20px hsl(210 100% 60% / 0.6);
+    --shadow-glow: 0 0 100px hsl(210 100% 60% / 0.5);
+    --shadow-soft: 0 10px 40px -15px hsl(0 0% 0% / 0.5);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Inter", system-ui, sans-serif;
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: hsl(var(--electric));
+    color: hsl(var(--primary-foreground));
+  }
+
+  /* Visible, branded focus ring for keyboard users */
+  :focus-visible {
+    outline: 2px solid hsl(var(--electric));
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  /* Skip link */
+  .skip-link {
+    position: absolute;
+    top: -100px;
+    left: 1rem;
+    z-index: 100;
+    padding: 0.75rem 1.25rem;
+    background: hsl(var(--electric));
+    color: hsl(var(--primary-foreground));
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    transition: top 0.2s ease;
+  }
+  .skip-link:focus {
+    top: 1rem;
+  }
+}
+
+/* Honour OS-level reduced motion preference globally */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .marquee {
+    animation: none !important;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: "Space Grotesk", "Inter", sans-serif;
+    letter-spacing: -0.04em;
+  }
+
+  .text-gradient {
+    background: var(--gradient-electric);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .bg-mesh {
+    background-image: var(--gradient-mesh);
+  }
+
+  .bg-grid {
+    background-image: linear-gradient(to right, hsl(var(--border) / 0.4) 1px, transparent 1px), linear-gradient(to bottom, hsl(var(--border) / 0.4) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+
+  .glow-electric {
+    box-shadow: var(--shadow-electric);
+  }
+
+  .marquee {
+    animation: marquee 30s linear infinite;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-500;
+    transition-timing-function: var(--transition-smooth);
+  }
+  .hover-lift:hover {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 30px hsl(var(--electric) / 0.4);
+  }
+  50% {
+    box-shadow: 0 0 60px hsl(var(--electric) / 0.7);
+  }
+}
