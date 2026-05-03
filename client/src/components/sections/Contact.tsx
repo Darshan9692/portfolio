@@ -1,13 +1,15 @@
 import { SectionHeader } from "@/components/shared/SectionHeader";
 import { SectionWrapper } from "@/components/shared/SectionWrapper";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { API_CONFIG } from "@/config/api";
+import { contactInfo, MAP_URL, QR_CODE_API } from "@/constants/portfolio-data";
 import { toast } from "@/hooks/use-toast";
 import apiClient from "@/lib/axios";
 import { motion } from "framer-motion";
-import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
+import { ArrowRight, QrCode } from "lucide-react";
 import { useState } from "react";
 
 export const Contact = () => {
@@ -45,6 +47,8 @@ export const Contact = () => {
     }
   };
 
+  const qrCodeUrl = QR_CODE_API(MAP_URL);
+
   return (
     <SectionWrapper id="contact">
       <div className="absolute inset-0 bg-gradient-radial opacity-50" />
@@ -56,23 +60,46 @@ export const Contact = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
           className="lg:col-span-2 space-y-4">
-          {[
-            { icon: Mail, label: "Email", value: "dpinfo9692@gmail.com" },
-            { icon: Phone, label: "Phone", value: "+91 9054849692" },
-            { icon: MapPin, label: "Based in", value: "Ahmedabad, Gujarat, India" },
-          ].map((item) => {
+          {contactInfo.map((item) => {
             const Icon = item.icon;
             return (
               <div
                 key={item.label}
-                className="flex items-center gap-4 p-5 rounded-2xl border border-border/60 bg-card/60 backdrop-blur-sm hover:border-primary/50 transition-colors">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-electric shadow-electric">
-                  <Icon className="h-5 w-5 text-primary-foreground" />
+                className="flex items-center justify-between p-5 rounded-2xl border border-border/60 bg-card/60 backdrop-blur-sm hover:border-primary/50 transition-colors group/item">
+                <div className="flex items-center gap-4">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-electric shadow-electric">
+                    <Icon className="h-5 w-5 text-primary-foreground" />
+                  </div>
+                  <div>
+                    <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground">{item.label}</div>
+                    <div className="font-medium">{item.value}</div>
+                  </div>
                 </div>
-                <div>
-                  <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground">{item.label}</div>
-                  <div className="font-medium">{item.value}</div>
-                </div>
+
+                {item.showQR && (
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        className="rounded-full h-10 w-10 border border-border/40 opacity-0 group-hover/item:opacity-100 transition-opacity hover:bg-primary hover:text-primary-foreground"
+                        aria-label="Show Location QR Code">
+                        <QrCode className="h-4 w-4" />
+                      </Button>
+                    </DialogTrigger>
+                    <DialogContent className="sm:max-w-[300px]">
+                      <DialogHeader>
+                        <DialogTitle className="text-center">Scan for Location</DialogTitle>
+                      </DialogHeader>
+                      <div className="flex flex-col items-center justify-center p-4">
+                        <div className="bg-white p-4 rounded-xl shadow-lg mb-4">
+                          <img src={qrCodeUrl} alt="Location QR Code" width={200} height={200} className="w-full h-full object-contain" />
+                        </div>
+                        <p className="text-xs text-center text-muted-foreground">Scan this to open my exact location in Google Maps</p>
+                      </div>
+                    </DialogContent>
+                  </Dialog>
+                )}
               </div>
             );
           })}

@@ -1,5 +1,20 @@
 import { Achievement, Education, Experience, Project, SkillGroup } from "@/types/portfolio";
-import { Briefcase, Cloud, Code2, Cpu, Database, FolderCode, GraduationCap, Home, Layers, Newspaper, Palette, Trophy, Wrench } from "lucide-react";
+import { Briefcase, Cloud, Code2, Cpu, Database, FolderCode, GraduationCap, Home, Layers, Mail, MapPin, Newspaper, Palette, Phone, Trophy, Wrench } from "lucide-react";
+
+export const contactInfo = [
+  { icon: Mail, label: "Email", value: "dpinfo9692@gmail.com" },
+  { icon: Phone, label: "Phone", value: "+91 9054849692" },
+  {
+    icon: MapPin,
+    label: "Based in",
+    value: "Ahmedabad, Gujarat, India",
+    showQR: true,
+  },
+];
+
+export const MAP_QUERY = "R9P8+9QP, B-55, Dholka Rd, Badrinath Society, Bavla, Gujarat 382220";
+export const MAP_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(MAP_QUERY)}`;
+export const QR_CODE_API = (data: string) => `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(data)}`;
 
 export const education: Education[] = [
   {
