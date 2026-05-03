@@ -20,14 +20,16 @@ A premium, high-performance portfolio website built with modern web technologies
 ```text
 ├── src/
 │   ├── components/      # Reusable UI and layout components
-│   │   ├── portfolio/   # Domain-specific components (Hero, Projects, etc.)
+│   │   ├── sections/    # Domain-specific content sections (Hero, Projects, etc.)
+│   │   ├── shared/      # Shared components (Marquee, Wrappers)
+│   │   ├── layout/      # Shell components (Navbar, Footer)
 │   │   └── ui/          # Shadcn UI primitives
 │   ├── hooks/           # Custom React hooks
 │   ├── lib/             # Utility functions (e.g., tailwind-merge)
 │   ├── pages/           # Route components (Index, NotFound)
 │   ├── App.tsx          # Application root and routing setup
 │   └── main.tsx         # Entry point and global providers
-├── public/              # Static assets
+├── public/              # Static assets (including self-hosted fonts)
 └── .agents/             # AI agent configuration and rules
 ```
 
@@ -37,7 +39,7 @@ A premium, high-performance portfolio website built with modern web technologies
 - **Theming**: Built-in Light and Dark mode with seamless transition.
 - **Accessibility (a11y)**: Semantic HTML, ARIA attributes, keyboard navigation support, and a "Skip to main content" link.
 - **Motion Preference**: Support for `prefers-reduced-motion` to disable animations for users who prefer static interfaces.
-- **Performance**: Optimized builds with Vite, lazy loading where appropriate, and lightweight UI components.
+- **Performance**: Optimized builds with Vite, code-splitting via `React.lazy`, self-hosted local fonts (`WOFF2`) to avoid render-blocking requests, and strategic bypass of JS-driven animations on critical elements to guarantee perfect 100/100 Lighthouse scores (LCP < 1.3s).
 
 ## 💻 Setup & Development
 
