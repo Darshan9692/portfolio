@@ -46,6 +46,7 @@ cd server && npm run dev
 ## 🛠️ Tooling & Quality
 
 Both projects are configured with:
+
 - **ESLint**: For code quality and error detection.
 - **Prettier**: For consistent code formatting.
 - **TypeScript**: For static typing.
