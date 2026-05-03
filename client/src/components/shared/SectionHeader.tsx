@@ -13,7 +13,7 @@ export const SectionHeader = ({ eyebrow }: SectionHeaderProps) => (
     className="mb-10 max-w-3xl">
     <div className="inline-flex items-center gap-2">
       <span className="h-px w-8 bg-primary" />
-      <span className="text-xs font-mono uppercase tracking-[0.25em] text-primary">{eyebrow}</span>
+      <h2 className="text-xs font-mono uppercase tracking-[0.25em] text-primary">{eyebrow}</h2>
     </div>
   </motion.div>
 );

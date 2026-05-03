@@ -30,9 +30,7 @@ const ExperienceCard = ({ exp, index }: { exp: ExperienceType; index: number }) 
         {/* Expandable Summary */}
         <div className="mt-4 relative">
           <p className={`text-muted-foreground leading-relaxed transition-all duration-300 ${isExpanded ? "" : "line-clamp-3"}`}>{exp.summary}</p>
-          <button
-            onClick={() => setIsExpanded(!isExpanded)}
-            className="mt-3 text-[10px] font-mono uppercase tracking-widest text-primary flex items-center gap-1.5 hover:underline focus:outline-none bg-primary/5 px-2.5 py-1 rounded-md transition-colors hover:bg-primary/10">
+          <button onClick={() => setIsExpanded(!isExpanded)} className="mt-2 text-xs font-mono text-primary flex items-center gap-1 hover:underline focus:outline-none">
             {isExpanded ? (
               <>
                 Show less <ChevronUp className="h-3 w-3" />

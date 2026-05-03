@@ -127,6 +127,13 @@ export const Navbar = () => {
                 </a>
               );
             })}
+            <div className="mt-2 pt-2 border-t border-border/40 flex items-center justify-between px-2">
+              <span className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Settings</span>
+              <div className="flex items-center gap-1">
+                <MotionToggle />
+                <ThemeToggle />
+              </div>
+            </div>
           </motion.nav>
         )}
       </AnimatePresence>
