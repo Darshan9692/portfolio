@@ -17,17 +17,9 @@
     <link rel="canonical" href="https://darshan-panchal.vercel.app/" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-    <!-- Optimized Google Fonts Loading -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@400;500&display=swap"
-      rel="stylesheet"
-      media="print"
-      onload="this.media = 'all'" />
-    <noscript>
-      <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
-    </noscript>
+    <!-- Self-hosted fonts: eliminates render-blocking cross-origin requests -->
+    <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/space-grotesk-latin-700.woff2" as="font" type="font/woff2" crossorigin />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -46,7 +38,7 @@
     <meta name="twitter:description" content="Software engineering portfolio of Darshan Panchal. High-performance web applications built with React, TypeScript, and Node.js." />
     <meta name="twitter:image" content="https://darshan-panchal.vercel.app/og-image.jpg" />
 
-    <!-- JSON-LD: Person + WebSite + ProfessionalService -->
+    <!-- JSON-LD: Person + WebSite -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -73,22 +65,6 @@
         ]
       }
     </script>
-    <style>
-      :root {
-        --background: 210 40% 98%;
-        --foreground: 222 47% 8%;
-      }
-      .dark {
-        --background: 222 47% 5%;
-        --foreground: 210 40% 98%;
-      }
-      body {
-        background-color: hsl(var(--background));
-        color: hsl(var(--foreground));
-        font-family: "Inter", system-ui, sans-serif;
-        font-display: swap;
-      }
-    </style>
   </head>
   <body>
     <div id="root"></div>

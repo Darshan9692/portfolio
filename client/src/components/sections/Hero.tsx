@@ -51,7 +51,7 @@ export const Hero = () => {
       </div>
 
       <div className="container relative z-30 flex flex-col items-center text-center px-6">
-        <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="mb-4 flex justify-center">
+        <div className="mb-4 flex justify-center">
           <h2 className="text-base md:text-2xl font-medium text-foreground/80 flex items-center justify-center gap-2">
             Hey{" "}
             <span className="animate-pulse" role="img" aria-label="waving hand">
@@ -59,27 +59,15 @@ export const Hero = () => {
             </span>
             , I'm Darshan Panchal
           </h2>
-        </motion.div>
+        </div>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+        <h1
           className="w-full mb-6 font-display text-[clamp(2.5rem,10vw,8rem)] font-bold tracking-tight text-foreground flex flex-wrap justify-center items-center gap-x-[0.1em] gap-y-2 leading-[1.1]">
-          <motion.span initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.1 }}>
-            Software
-          </motion.span>
+          <span>Software</span>
+          <span className="text-gradient italic font-light relative">Engineer.</span>
+        </h1>
 
-          <motion.span
-            initial={{ opacity: 0, x: 10 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-gradient italic font-light relative">
-            Engineer.
-          </motion.span>
-        </motion.h1>
-
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }} className="flex flex-col items-center gap-6">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.15 }} className="flex flex-col items-center gap-6">
           <p className="max-w-xl text-base md:text-lg text-muted-foreground leading-relaxed mx-auto">
             Full Stack Developer specializing in scalable backend systems and high-performance applications, delivering end-to-end solutions with a focus on clean architecture and
             efficiency.
@@ -113,7 +101,7 @@ export const Hero = () => {
           href="#education"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.4 }}
+          transition={{ delay: 0.6 }}
           className="hidden lg:flex absolute bottom-8 right-8 items-center gap-2 text-xs uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors">
           Scroll <ArrowDown className="h-3.5 w-3.5 animate-bounce" />
         </motion.a>
