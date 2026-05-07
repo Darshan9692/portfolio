@@ -10,6 +10,12 @@ export const genericIcons: Record<string, LucideIcon> = {
   Windmill: Terminal,
   "Claude Code": Cpu,
   Codex: Braces,
+  // Conceptual / architecture skills that don't have SimpleIcons
+  "Redux Toolkit": Code2,
+  Microservices: Box,
+  "JWT Authentication": Globe,
+  "JWT (JSON Web Tokens)": Globe,
+  CQRS: Braces,
 };
 
 export const slugMapping: Record<string, string> = {
