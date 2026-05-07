@@ -13,7 +13,7 @@ export const Hero = () => {
   };
 
   return (
-    <section id="home" onMouseMove={onMouseMove} className="relative min-h-[100svh] flex items-center pt-32 pb-10 overflow-hidden cursor-crosshair">
+    <section id="home" onMouseMove={onMouseMove} className="relative min-h-[100svh] flex items-center pt-32 pb-10 overflow-hidden cursor-default md:cursor-crosshair">
       {/* Interactive Background Elements */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-mesh opacity-30" />

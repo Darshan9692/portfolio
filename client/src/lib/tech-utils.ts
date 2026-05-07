@@ -14,7 +14,9 @@ export const genericIcons: Record<string, LucideIcon> = {
 
 export const slugMapping: Record<string, string> = {
   C: "c",
+  "C Programming": "c",
   Java: "openjdk",
+  "Java Programming": "openjdk",
   "React.js": "react",
   "Next.js": "nextdotjs",
   "Node.js": "nodedotjs",

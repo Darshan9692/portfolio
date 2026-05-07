@@ -51,7 +51,7 @@ export const Contact = () => {
 
   return (
     <SectionWrapper id="contact" aria-labelledby="contact-title">
-      <div className="absolute inset-0 bg-gradient-radial opacity-50" />
+      <div className="absolute inset-0 bg-gradient-radial opacity-50 pointer-events-none" aria-hidden="true" />
       <SectionHeader id="contact-title" eyebrow="07 — Contact" />
       <div className="grid lg:grid-cols-5 gap-8">
         <motion.div

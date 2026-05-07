@@ -33,11 +33,8 @@ export interface Project {
   description: string;
   tags: string[];
   image: string;
-  href?: string;
-  github?: string;
   gradient: string;
   year: string;
-  category: string;
 }
 export interface Achievement {
   title: string;
