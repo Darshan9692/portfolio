@@ -176,7 +176,7 @@ export const projects: Project[] = [
       "Web3",
     ],
     gradient: "from-[hsl(217,100%,55%)] via-[hsl(200,100%,60%)] to-[hsl(180,100%,55%)]",
-    image: "/images/projects/pulse.png",
+    image: "/images/projects/chainit.jpeg",
   },
   {
     title: "Cost Tool - MMR Research",
@@ -185,7 +185,7 @@ export const projects: Project[] = [
       "Cost-Tool is an advanced, high-efficiency solution crafted to help MMR Staff precisely calculate the costs tied to their projects or cost sheets. Featuring an intuitive interface and a robust set of tools, Cost-Tool simplifies the cost estimation process, ensuring accuracy and reliability to support informed, strategic decision-making.",
     tags: ["Next.js", "NextAuth", "GraphQL", "Hasura", "tRPC", "Tailwind", "Docker", "uRQL", "n8n", "ACRM"],
     gradient: "from-[hsl(240,80%,60%)] via-[hsl(217,100%,55%)] to-[hsl(190,90%,55%)]",
-    image: "/images/projects/northstar.png",
+    image: "/images/projects/cost-tool.png",
   },
   {
     title: "Medical Scheduling System",
@@ -194,7 +194,7 @@ export const projects: Project[] = [
       "Medical Scheduling System is a web-based medical appointment and practice management system for patients, doctors, and admins. It enables online doctor discovery, appointment booking, patient history management, and prescription generation.The platform focuses on improving clinic efficiency and patient experience through centralized scheduling and records.",
     tags: ["Node.js", "Express.js", "MySQL", "JWT Authentication", "Socket.io", "JavaScript (ES6+)", "Tailwind CSS", "HTML5 & CSS3", "EJS (Server-Side Rendering)"],
     gradient: "from-[hsl(220,100%,50%)] to-[hsl(195,100%,55%)]",
-    image: "/images/projects/cobalt.png",
+    image: "/images/projects/medical-scheduling.png",
   },
   {
     title: "Chat Communication System",
@@ -229,7 +229,7 @@ export const projects: Project[] = [
       "Autoprefixer",
     ],
     gradient: "from-[hsl(210,100%,45%)] via-[hsl(220,100%,55%)] to-[hsl(260,80%,55%)]",
-    image: "/images/projects/atlas.png",
+    image: "/images/projects/chat-communication.png",
   },
 ];
 
